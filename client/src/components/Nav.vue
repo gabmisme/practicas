@@ -15,7 +15,7 @@
 			<v-toolbar flat>
 				<v-list-tile>
 					<v-list-tile-title class="title">
-						Lemari Buku
+						Menu
 					</v-list-tile-title>
 				</v-list-tile>
 			</v-toolbar>
@@ -28,34 +28,34 @@
 						<v-icon>mdi-home</v-icon>
 					</v-list-tile-action>
 					<v-list-tile-content>
-						Beranda
+						Inicio
 					</v-list-tile-content>
 				</v-list-tile>
 
-				<v-list-tile to="/book" @click="setName">
+				<v-list-tile to="/libro" @click="setName">
 					<v-list-tile-action>
 						<v-icon>mdi-book</v-icon>
 					</v-list-tile-action>
 					<v-list-tile-content>
-						Buku
+						Libros
 					</v-list-tile-content>
 				</v-list-tile>
 
-				<v-list-tile to="/author" @click="setName">
+				<v-list-tile to="/autor" @click="setName">
 					<v-list-tile-action>
 						<v-icon>mdi-account-box</v-icon>
 					</v-list-tile-action>
 					<v-list-tile-content>
-						Pengarang
+						Autor
 					</v-list-tile-content>
 				</v-list-tile>
 
-				<v-list-tile to="/category" @click="setName">
+				<v-list-tile to="/categoria" @click="setName">
 					<v-list-tile-action>
 						<v-icon>mdi-shape</v-icon>
 					</v-list-tile-action>
 					<v-list-tile-content>
-						Kategori
+						Categoria
 					</v-list-tile-content>
 				</v-list-tile>
 			</v-list>

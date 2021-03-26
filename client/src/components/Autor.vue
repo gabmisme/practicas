@@ -1,6 +1,6 @@
 <template>
 	<v-container>
-		<h1 class="subheader">Daftar Pengarang</h1>
+		<h1 class="subheader">Datos Autor</h1>
 
 		<v-snackbar
 			v-model="snackbar"
@@ -12,14 +12,14 @@
 
 		<v-card>
 			<v-card-title>
-			<v-btn color="primary" @click="dialogAdd = true">Tambah Data</v-btn>
+			<v-btn color="primary" @click="dialogAdd = true">Nuevo Autor</v-btn>
 
 				<v-spacer></v-spacer>
 
 				<v-text-field
 					v-model="search"
 					append-icon="search"
-					label="Cari Disini"
+					label="Busca aquí"
 				></v-text-field>
 
 			</v-card-title>
@@ -70,13 +70,13 @@
 		<v-dialog v-model="dialogAdd" max-width="500px">
 			<v-divider></v-divider>
 			<v-card>
-				<v-card-title>Tambah Pengarang</v-card-title>
+				<v-card-title>Información</v-card-title>
 				<v-card-text>
 					<v-form ref="form">
 						<v-text-field
 							v-model="pengarang"
 							:counter="10"
-							label="Pengarang"
+							label="Autor"
 						></v-text-field>
 
 						<v-dialog
@@ -89,14 +89,14 @@
 						>
 							<v-text-field
 								slot="activator"
-								label="Tanggal Lahir"
+								label="Fecha"
 								v-model="tgl_lahir"
 								prepend-icon="event"
 								readonly
 							></v-text-field>
 							<v-date-picker v-model="tgl_lahir" scrollable>
 								<v-spacer></v-spacer>
-								<v-btn flat color="error" @click="dialogDob = false">Batal</v-btn>
+								<v-btn flat color="error" @click="dialogDob = false">Cancelar</v-btn>
 								<v-btn flat color="primary" @click="$refs.dialog.save(tgl_lahir)">OK</v-btn>
 							</v-date-picker>
 						</v-dialog>
@@ -104,8 +104,8 @@
 				</v-card-text>
 				<v-card-actions>
 					<v-spacer></v-spacer>
-					<v-btn flat color="error" @click="reset">Batal</v-btn>
-					<v-btn flat color="primary" @click="saveCategory">Simpan</v-btn>
+					<v-btn flat color="error" @click="reset">Cancelar</v-btn>
+					<v-btn flat color="primary" @click="saveCategory">Guardar</v-btn>
 				</v-card-actions>
 			</v-card>
 		</v-dialog>
@@ -118,7 +118,7 @@
 				</v-card-text>
 				<v-card-actions>
 					<v-spacer></v-spacer>
-					<v-btn flat color="error" @click="dialogConfirm = false">Batal</v-btn>
+					<v-btn flat color="error" @click="dialogConfirm = false">Cancelar</v-btn>
 					<v-btn flat color="primary" @click="deleteAuthor(id)">Oke</v-btn>
 				</v-card-actions>
 			</v-card>
@@ -130,7 +130,7 @@
 export default {
 	name: 'Author',
 	metaInfo: {
-		title: 'Pengarang | Lemari Buku'
+		title: 'Administración'
 	},
 
 	data: () => ({
@@ -145,11 +145,11 @@ export default {
 		snackbar: false,
 		headers: [
 			{
-				text: 'Pengarang',
+				text: 'Autor',
 				value: 'pengarang',
 			},
 			{
-				text: 'Tanggal Lahir',
+				text: 'Fecha de nacimiento',
 				value: 'tgl_lahir',
 				width: '50%'
 			},
@@ -177,8 +177,9 @@ export default {
 		},
 
 		saveCategory () {
-			let data = 	'pengarang=' + this.pengarang +
-									'&tgl_lahir=' + this.tgl_lahir
+			let data = 	'pengarang=' + 
+						this.pengarang +
+						'&tgl_lahir=' + this.tgl_lahir
 
 			this.axios.post('authors', data)
 				.then(res => {

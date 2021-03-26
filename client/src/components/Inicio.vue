@@ -1,14 +1,14 @@
 <template>
 	<div>
-		<h1>Home</h1>
+		<h1>Inicio</h1>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'Home',
+	name: 'Inicio',
 	metaInfo: {
-		title: 'Selamat Datang di Lemari Buku'
+		title: 'Panel de Inicio'
 	},
 
 	data: () => ({

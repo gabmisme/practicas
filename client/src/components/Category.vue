@@ -1,19 +1,13 @@
 <template>
 	<v-container>
-		<h1 class="subheader">Daftar Kategori</h1>
+		<h1 class="subheader">Categoria</h1>
 
 		<v-card>
 			<v-card-title>
-			<v-btn color="primary" @click="dialogAdd = true">Tambah Data</v-btn>
-
+			<v-btn color="primary" @click="dialogAdd = true">Nuevo</v-btn>
 				<v-spacer></v-spacer>
-
-				<v-text-field
-					v-model="search"
-					append-icon="search"
-					label="Cari Disini"
-				></v-text-field>
-
+				<v-text-field v-model="search" append-icon="search" label="Cari Disini">
+				</v-text-field>
 			</v-card-title>
 			<v-data-table
 				:headers="headers"
@@ -114,7 +108,7 @@
 export default {
 	name: 'Home',
 	metaInfo: {
-		title: 'Kategori | Lemari Buku'
+		title: 'Categoria'
 	},
 
 	data: () => ({

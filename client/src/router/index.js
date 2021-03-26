@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Header from '@/components/Header'
-import Home from '@/components/Home'
-import Book from '@/components/Book'
-import Author from '@/components/Author'
+import Inicio from '@/components/Inicio'
+import Libro from '@/components/Libro'
+import Autor from '@/components/Autor'
 import Category from '@/components/Category'
 
 Vue.use(Router)
@@ -17,21 +17,21 @@ export default new Router({
       children: [
       	{
       		path: '',
-          name: 'Home',
-          component: Home
+          name: 'Inicio',
+          component: Inicio
       	},
         {
-          path: 'book',
-          name: 'Buku',
-          component: Book,
+          path: 'libro',
+          name: 'Libro',
+          component: Libro,
         },
         {
-          path: 'author',
-          name: 'Pengarang',
-          component: Author
+          path: 'autor',
+          name: 'Autor',
+          component: Autor
         },
         {
-          path: 'category',
+          path: 'categoria',
           name: 'Kategori',
           component: Category
         }

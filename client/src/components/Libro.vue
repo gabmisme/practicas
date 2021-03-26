@@ -1,14 +1,14 @@
 <template>
 	<v-container>
-		<h1 class="title">Daftar Buku</h1>
+		<h1 class="title">Datos de libros</h1>
 	</v-container>
 </template>
 
 <script>
 export default {
-	name: 'Book',
+	name: 'Libro',
 	metaInfo: {
-		title: 'Buku | Lemari Buku'
+		title: 'Administracion | Libro'
 	},
 
 	data: () => ({

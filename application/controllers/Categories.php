@@ -21,7 +21,7 @@ class Categories extends REST_Controller {
 			'data' => $categories->result()
 		], 200);
 	}
-
+// funcion optener datos por metodo post
 	public function index_post()
 	{
 		$kategori = $this->post('kategori');
@@ -47,7 +47,7 @@ class Categories extends REST_Controller {
 			], 500);
 		}
 	}
-
+// funcion actualizar
 	public function index_update()
 	{
 		$id = $this->input->post('id');
@@ -74,7 +74,7 @@ class Categories extends REST_Controller {
 			], 500);
 		}
 	}
-
+	// funcion de eliminar
 	public function index_delete()
 	{
 		$id = $this->query('id');
