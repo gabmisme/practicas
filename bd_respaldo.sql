@@ -13,28 +13,39 @@
 
 
 -- Volcando estructura de base de datos para crud-ci-vue
-DROP DATABASE IF EXISTS `crud-ci-vue`;
 CREATE DATABASE IF NOT EXISTS `crud-ci-vue` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `crud-ci-vue`;
 
 -- Volcando estructura para tabla crud-ci-vue.tb_kategori
-DROP TABLE IF EXISTS `tb_kategori`;
 CREATE TABLE IF NOT EXISTS `tb_kategori` (
   `id_kategori` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(100) DEFAULT NULL,
   `deskripsi` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_kategori`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla crud-ci-vue.tb_kategori: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla crud-ci-vue.tb_kategori: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb_kategori` DISABLE KEYS */;
 REPLACE INTO `tb_kategori` (`id_kategori`, `kategori`, `deskripsi`) VALUES
-	(12, 'jhgjhgj', 'hjhgjhgjg'),
-	(13, 'jhgjgh', 'fdhdghd'),
-	(14, 'jhgjgh', 'fdhdghd'),
-	(15, 'jhgjgh', 'fdhdghd'),
-	(16, 'jhgjgh', 'fdhdghd');
+	(18, 'gfdg', 'qwqwew'),
+	(19, 'kkkk', 'ityityityi');
 /*!40000 ALTER TABLE `tb_kategori` ENABLE KEYS */;
+
+-- Volcando estructura para tabla crud-ci-vue.tb_pengarang
+CREATE TABLE IF NOT EXISTS `tb_pengarang` (
+  `id_pengarang` int(11) NOT NULL AUTO_INCREMENT,
+  `pengarang` varchar(50) DEFAULT NULL,
+  `tgl_lahir` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_pengarang`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla crud-ci-vue.tb_pengarang: ~3 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb_pengarang` DISABLE KEYS */;
+REPLACE INTO `tb_pengarang` (`id_pengarang`, `pengarang`, `tgl_lahir`) VALUES
+	(1, 'afe', '2021-03-16'),
+	(3, 'hjhgj', '2021-03-16'),
+	(6, 'jjj', '2021-03-14');
+/*!40000 ALTER TABLE `tb_pengarang` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

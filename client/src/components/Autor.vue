@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<h1 class="subheader">Datos Autor</h1>
-
+		<!-- mensajes flotante -->
 		<v-snackbar
 			v-model="snackbar"
 			:top="true"
@@ -12,17 +12,15 @@
 
 		<v-card>
 			<v-card-title>
-			<v-btn color="primary" @click="dialogAdd = true">Nuevo Autor</v-btn>
-
+				<v-btn color="primary" @click="dialogAdd = true">Nuevo Autor</v-btn>
 				<v-spacer></v-spacer>
-
 				<v-text-field
 					v-model="search"
 					append-icon="search"
 					label="Busca aquí"
 				></v-text-field>
-
 			</v-card-title>
+			<!-- table -->
 			<v-data-table
 				:headers="headers"
 				:items="authors"
@@ -33,32 +31,32 @@
 					<td>{{ props.item.pengarang }}</td>
 					<td>{{ props.item.tgl_lahir }}</td>
 					<td>
-						<v-btn fab small color="primary" title="Ubah">
-							<v-icon>mdi-pencil</v-icon>
+						<v-btn fab  small icon outlined  elevation="2">
+							<v-icon small class="mr-1" color="primary"  title="Editar">mdi-pencil</v-icon>
 						</v-btn>
 
-						<v-btn fab small color="error" title="Hapus" @click="deleteConfirm(props.item.id_pengarang)">
-							<v-icon>mdi-delete</v-icon>
+						<v-btn fab small icon outlined elevation="2">
+							<v-icon   small color="error" title="Elminar"  @click="deleteConfirm(props.item.id_pengarang)" >mdi-delete</v-icon>
 						</v-btn>
 					</td>
 				</template>
-
+				<!-- alerta sin datos -->
 				<template slot="no-data">
 					<v-alert
 						:value="true"
 						color="error"
 						icon="mdi-magnify"
 						outline
-					>Tidak Ada Data</v-alert>
+					>sin datos</v-alert>
 				</template>
-
+				<!-- alerta  autor no encontrada-->
 				<template slot="no-results">
 					<v-alert
 						:value="true"
 						color="error"
 						icon="mdi-magnify"
 						outline
-					>Pengarang tidak ditemukan</v-alert>
+					>Autor no encontrada</v-alert>
 				</template>
 
 				<template slot="pageText" slot-scope="props">
@@ -66,11 +64,11 @@
 				</template>
 			</v-data-table>
 		</v-card>
-
+		<!-- modal agregar autor -->
 		<v-dialog v-model="dialogAdd" max-width="500px">
 			<v-divider></v-divider>
 			<v-card>
-				<v-card-title>Información</v-card-title>
+				<v-card-title>Agregar Autor</v-card-title>
 				<v-card-text>
 					<v-form ref="form">
 						<v-text-field
@@ -109,17 +107,17 @@
 				</v-card-actions>
 			</v-card>
 		</v-dialog>
-
+		<!-- modal confirmar eliminar -->
 		<v-dialog v-model="dialogConfirm" max-width="300px">
 			<v-divider></v-divider>
 			<v-card>
 				<v-card-text>
-					<p class="font-weight-bold">Apakah Anda ingin menghapus Pengarang yang dipilih?</p>
+					<p class="font-weight-bold">Esta seguro de eliminar?</p>
 				</v-card-text>
 				<v-card-actions>
 					<v-spacer></v-spacer>
 					<v-btn flat color="error" @click="dialogConfirm = false">Cancelar</v-btn>
-					<v-btn flat color="primary" @click="deleteAuthor(id)">Oke</v-btn>
+					<v-btn flat color="primary" @click="deleteAuthor(id)">ok</v-btn>
 				</v-card-actions>
 			</v-card>
 		</v-dialog>

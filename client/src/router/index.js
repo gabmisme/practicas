@@ -32,7 +32,7 @@ export default new Router({
         },
         {
           path: 'categoria',
-          name: 'Kategori',
+          name: 'Categoria',
           component: Category
         }
       ]
