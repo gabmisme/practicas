@@ -9,6 +9,7 @@ import Category from '@/components/Category'
 Vue.use(Router)
 
 export default new Router({
+  base:'/',
   mode: 'history',
   routes: [
     {
