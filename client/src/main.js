@@ -15,7 +15,7 @@ Vue.use(Vuetify)
 Vue.use(VueAxios, axios)
 Vue.use(Meta)
 
-axios.defaults.baseURL = 'http://localhost/crud-ci-vue/api'
+axios.defaults.baseURL = 'http://localhost:8091/crud-ci-vue/api'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
