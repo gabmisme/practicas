@@ -10,6 +10,7 @@ Vue.use(Router)
 
 export default new Router({
   base:'/',
+  hashbang:false,
   mode: 'history',
   routes: [
     {
